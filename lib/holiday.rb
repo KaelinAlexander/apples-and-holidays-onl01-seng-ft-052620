@@ -43,14 +43,28 @@ winter_supplies=[]
   winter_supplies.flatten
 end
 
-def all_supplies_in_holidays(holiday_hash)
-  holiday_hash.each do |season, holiday|
-    puts "#{season.capitalize}:"
-    holiday.each do |name, supply|
-      puts "#{name.to_s.split("_").map {|w| w.capitalize}.join(" ")}: #{supply.join(", ")}"
-    end
-  end
+def all_supplies_in_holidays(holiday_hash) 
+	holiday_hash.each do |season,holiday| 
+		puts "#{season.to_s.capitalize}:" 
+			holiday.each do |name,supplies| 
+				holiday 
+				capitalize_name = name.to_s.split('_').each do |word| 
+					word.capitalize! 
+				end 
+					capitalize_name = capitalize_name.join(' ') 
+					puts" #{capitalize_name}: #{supplies.join(", ")}" 
+			end 
+	end 
 end
+
+# def all_supplies_in_holidays(holiday_hash)
+#   holiday_hash.each do |season, holiday|
+#     puts "#{season.capitalize}:"
+#     holiday.each do |name, supply|
+#       puts "#{name.to_s.split("_").map {|w| w.capitalize}.join(" ")}: #{supply.join(", ")}"
+#     end
+#   end
+# end
 
   #     if name == :new_years || name == :memorial_day || name == :fourth_of_july 
   #         exception = name.to_s.split
